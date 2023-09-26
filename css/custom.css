@@ -1,3 +1,4 @@
+
 body{
     margin:0;
     background-image:url("../img/back.jpg");
@@ -99,11 +100,13 @@ article{
     padding: 10px;
     background:rgba(140, 140, 140,0.7);
     border-left: 3px cyan solid;
-    margin-top: 10%;
-    margin-bottom:10%;
+    color:white;
+    margin-top: 5%;
+    margin-bottom:3%;
     font-family: "Segoe UI Light",monospace;
     text-align: center;
     transition: background-color .5s, color .5s, letter-spacing .5s;
+    backdrop-filter: blur(5px);
 }
 article:hover{
     background-color: lightblue;
@@ -271,10 +274,17 @@ hr:hover{
     left:0;
 }
 .carousel-item .card {
-    font-size: 1.75dvw;
+    font-size: 1.75vw;
     height: 100%;
     border: none;
     background: rgba(140,140,140,0.85);
     color:white;
     object-fit: contain;
+}
+#vitrina{
+    scroll-margin-top: 100px;
+}
+
+form{
+    backdrop-filter: blur(10px);
 }
