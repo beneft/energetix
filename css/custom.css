@@ -1,6 +1,5 @@
 html{
     min-width: 400px;
-    height: 100vh;
 }
 body{
     margin:0;
@@ -230,7 +229,7 @@ hr:hover{
         object-fit: contain;
     }
 }
-#vitrina{
+#vitrina, #cc_corner{
     scroll-margin-top: 90px;
 }
 
