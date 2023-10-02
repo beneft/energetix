@@ -22,10 +22,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav">
-          <a href="#" class="nav-item nav-link active">Home</a>
-          <a href="#" class="nav-item nav-link">Profile</a>
-          <a href="#" class="nav-item nav-link">Messages</a>
-          <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
+          <a href="index.html" class="nav-item nav-link active">Home</a>
+          <a href="shop.html" class="nav-item nav-link">Store</a>
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profile</a>
+            <div class="dropdown-menu disabled">
+              <a href="#" class="dropdown-item">Edit profile</a>
+              <a href="#" class="dropdown-item">Edit reviews</a>
+              <a href="#" class="dropdown-item">Purchases</a>
+              <a href="#" class="dropdown-item">Partnership</a>
+            </div>
+          </div>
         </div>
         <div class="navbar-nav ms-auto">
           <a href="#" class="nav-item nav-link">Login</a>
@@ -35,9 +42,9 @@
   </nav>
 
   <div class="alert alert-warning mt-2 mx-2 text-center">
-    <i class="fa fa-info-circle"></i><strong> This webpage is under construction!</strong> We are sorry for any caused inconvenience or utter appearance!
+    <i class="fa fa-info-circle"></i><strong> This webpage is under construction!</strong> We are sorry for any caused inconvenience or utterly ugly appearance!
   </div>
-  <form class="mx-5 px-4 text-light border border-warning">
+  <form class="mx-md-5 mx-3 mb-5 px-4 text-light border border-warning">
     <div class="row g-1 mb-2">
       <div class="col-6 px-1">
         <label class="form-label" for="name">Name</label>
@@ -55,8 +62,8 @@
       </div>
     </div>
     <label class="form-label">Specify your location</label>
-    <div class="row g-1 mb-2">
-      <div class="col-6 col-sm-4 me-auto me-md-0 col-md-3 px-1">
+    <div class="row g-1">
+      <div class="col-12 col-sm-6 me-auto me-md-0 col-md-3 px-1">
         <select class="form-select">
           <option>Region</option>
           <option>Eastern Europe</option>
@@ -80,18 +87,200 @@
       </div>
     </div>
     <small class="form-text text-white-50">Choose your region, than specify location starting with country, ending with home number (ZIP code).</small>
-    <div class="row g-1 mb-2">
-      <div class="col-12 col-md-4 bg-dark px-1">
-        GOOD NAME
+    <div class="row g-1 mb-2 mt-2">
+      <div class="col-12 col-md-4 bg-dark bg-opacity-50 rounded-3 p-2 text-center">
+        <p class="pt-md-4 pt-3">You are obtaining the following product:<br><strong><u>*INSERT NAME HERE*</u></strong></p>
       </div>
-      <div class="col-12 col-md-8 px-3">
-        Quantity <input type="range" class="form-range" max="50" min="1" step="1">
+      <div class="col-12 col-md-8 px-3 mb-2">
+        Quantity <input id="range" type="range" class="form-range" max="50" min="1" step="1" value="1">
+        <p class="d-inline"><span id="demo"></span></p>
       </div>
+      <script>
+        var slider = document.getElementById("range");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+      </script>
     </div>
-    <div class="list-group w-50 mx-auto">
-      <div class="list-group-item"><input type="radio" id="sub-basic"><label class="form-label ms-2" for="sub-basic">BASIC</label></div>
+    <h3 class="text-center">Choose your service tier.</h3>
+    <div class="list-group w-50 mx-auto mb-2 text-center">
+      <div class="list-group-item"><input type="radio" id="sub-basic" name="sub" checked><label class="form-label ms-2" for="sub-basic">BASIC <a href="#" data-bs-toggle="tooltip" title='Delivery time: 7d NA, 14d SA, up to 30d overseas'><i class="fa fa-info-circle"></i></a></label></div>
+      <div class="list-group-item"><input type="radio" id="sub-express" name="sub"><label class="form-label ms-2" for="sub-express">EXPRESS <a href="#" data-bs-toggle="tooltip" title="Delivery time: 3d NA, 7d SA, up to 20d overseas"><i class="fa fa-info-circle"></i></a></label></div>
+      <div class="list-group-item"><input type="radio" id="sub-ultimate" name="sub"><label class="form-label ms-2" for="sub-ultimate">ULTIMATE <a href="#" data-bs-toggle="tooltip" title="This tier allows you to buy extra large parcels with express speed."><i class="fa fa-info-circle"></i></a></label></div>
+    </div>
+    <p class="form-text text-white-50">Add a comment for your purchase</p>
+    <textarea class="form-control mx-auto mb-2" rows="2"></textarea>
+    <div class="my-4 justify-content-around d-flex">
+      <a href="index.html" class="btn btn-secondary rounded-pill">Discard</a>
+      <a href="form.html" class="btn btn-primary rounded-pill">Proceed to payment</a>
     </div>
   </form>
+  <script>
+    $(document).ready(function(){
+      $('[data-bs-toggle="tooltip"]').tooltip();
+    });
+  </script>
+  <div class="container-fluid mb-5 pb-3 px-md-5 px-3">
+    <h3 class="text-center text-white" style="backdrop-filter: blur(10px);text-shadow:1px 1px 1px black;">FAQ</h3>
+    <div class="accordion" id="myAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">How much will be shipping to my country?</button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show">
+          <div class="card-body">
+            <table class="table table-responsive table-bordered table-hover table-striped w-75">
+              <thead class="text-center table-dark">
+              <tr>
+                <th colspan="2"></th>
+                <th colspan="4">Parcel weight</th>
+              </tr>
+              <tr>
+                <th>Region</th>
+                <th>Delivery type</th>
+                <th><2kg ~4cans</th>
+                <th>2-15kg ~28cans</th>
+                <th>15-25kg ~47cans</th>
+                <th>25+kg <a href="#" data-bs-toggle="tooltip" title="Only for ULTIMATE"><i class="fa fa-info-circle"></i></a></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>W. Europe</td>
+                <td>Basic<br>Express</td>
+                <td>&pound;17<br>&pound;29</td>
+                <td>&pound;25<br>&pound;34</td>
+                <td>&pound;46<br>&pound;55</td>
+                <td>&pound; ~</td>
+              </tr>
+              <tr>
+                <td>E. Europe</td>
+                <td>Basic<br>Express</td>
+                <td>&pound;19<br>&pound;32</td>
+                <td>&pound;27<br>&pound;37</td>
+                <td>&pound;48<br>&pound;58</td>
+                <td>&pound; ~</td>
+              </tr>
+              <tr>
+                <td>Africa</td>
+                <td>Basic</td>
+                <td>&pound;29</td>
+                <td>&pound;76</td>
+                <td>&pound;110</td>
+                <td>&pound; ~</td>
+              </tr>
+              <tr>
+                <td>USA & Canada</td>
+                <td>Basic<br>Express</td>
+                <td>&pound;6<br>&pound;14</td>
+                <td>&pound;11<br>&pound;21</td>
+                <td>&pound;13<br>&pound;25</td>
+                <td>&pound; ~</td>
+              </tr>
+              <tr>
+                <td>Lat. America</td>
+                <td>Basic<br>Express</td>
+                <td>&pound;13<br>&pound;20</td>
+                <td>&pound;22<br>&pound;28</td>
+                <td>&pound;37<br>&pound;44</td>
+                <td>&pound; ~</td>
+              </tr>
+              <tr>
+                <td>S. America</td>
+                <td>Basic<br>Express</td>
+                <td>&pound;22<br>&pound;34</td>
+                <td>&pound;30<br>&pound;39</td>
+                <td>&pound;51<br>&pound;60</td>
+                <td>&pound; ~</td>
+              </tr>
+              <tr>
+                <td>Austr. & Ocn.</td>
+                <td>Basic<br>Express</td>
+                <td>&pound;19<br>&pound;32</td>
+                <td>&pound;27<br>&pound;37</td>
+                <td>&pound;48<br>&pound;58</td>
+                <td>&pound; ~</td>
+              </tr>
+              <tr>
+                <td>Mid. Asia</td>
+                <td>Basic</td>
+                <td>&pound;34</td>
+                <td>&pound;81</td>
+                <td>&pound;119</td>
+                <td>&pound; ~</td>
+              </tr>
+              <tr>
+                <td>China</td>
+                <td>Basic</td>
+                <td>&pound;32</td>
+                <td>&pound;74</td>
+                <td>&pound;99</td>
+                <td>&pound; ~</td>
+              </tr>
+              <tr>
+                <td>N. Ind. Ocean</td>
+                <td>Basic</td>
+                <td>&pound;30</td>
+                <td>&pound;76</td>
+                <td>&pound;104</td>
+                <td>&pound; ~</td>
+              </tr>
+              <tr>
+                <td>E. Asian Cst & Jpn</td>
+                <td>Basic<br>Express</td>
+                <td>&pound;30<br>&pound;61</td>
+                <td>&pound;76<br>&pound;150</td>
+                <td>&pound;104<br>&pound;220</td>
+                <td>&pound; ~</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo">How my purchase will be delivered?</button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse">
+          <div class="card-body p-4">
+            All your parcels are packed at our headquarters store in USA.<br>
+            We use durable wooden crates as a container, all cans are wrapped individually with impact resistant cover.<br>
+            Flavored with a good pack of bubble wrap, it is delivered via best courier company available.<br>
+            They may change depending on the destination, but the whole path of your parcel with detailed information may be viewed in link from your purchase email.<br>
+            Multiple parcels may be united into one delivery as they are purchased with the same email at close dates.<br>
+            You may ask us any other related questions through our public mail.<br>
+            <br>
+            We do everything for quality and our customers' please! Thank you for your trust!
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree">Why I cannot use EXPRESS tier for my region?</button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse">
+          <div class="card-body p-4">
+            Some regions are too far from convenient and well-processed custom logistic routes.<br>
+            Worldwide delivery services that allow express deliveries are either not available at all or have too little presence to include express services.<br>
+            On our side we had to choose the best and the fastest option from all available.<br>
+            Optimising delivery time is sometimes impossible because some services are overly expensive, some are unreliable and may result in the same delivery time as our chosen service.<br>
+            <br>
+            We are sorry for any inconvenience caused. We always update our information on delivery services and seek opportunity to use best couriers possible.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <hr>
+    <p>33 Sunside Drive, Guatemala, 33913. &copy; Stargazers house</p>
+  </footer>
 </main>
+<script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
