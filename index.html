@@ -55,15 +55,15 @@
             <div class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profile</a>
               <div class="dropdown-menu disabled">
-                <a href="#" class="dropdown-item">Edit profile</a>
-                <a href="#" class="dropdown-item">Edit reviews</a>
-                <a href="#" class="dropdown-item">Purchases</a>
-                <a href="#" class="dropdown-item">Partnership</a>
+                <a onclick="document.getElementById('cc_corner').scrollIntoView({behavior:'smooth'});" class="dropdown-item">Edit profile</a>
+                <a onclick="document.getElementById('cc_corner').scrollIntoView({behavior:'smooth'});" class="dropdown-item">Edit reviews</a>
+                <a onclick="document.getElementById('cc_corner').scrollIntoView({behavior:'smooth'});" class="dropdown-item">Purchases</a>
+                <a onclick="document.getElementById('cc_corner').scrollIntoView({behavior:'smooth'});" class="dropdown-item">Partnership</a>
               </div>
             </div>
           </div>
           <div class="navbar-nav ms-auto">
-            <a href="#" class="nav-item nav-link">Login</a>
+            <a onclick="document.getElementById('cc_corner').scrollIntoView({behavior:'smooth'});" class="nav-item nav-link">Login</a>
           </div>
         </div>
       </div>
@@ -267,8 +267,69 @@
       <a href="shop.html" class="btn btn-lg btn-primary btn-outline-dark mt-3 text-light">Go to full Catalogue -></a>
       </div>
     </div>
-
-
+    <div class="container" id="cc_corner">
+      <h2 class="text-light text-center bg-secondary">Customer's Corner</h2>
+      <ul class="nav nav-tabs justify-content-center bg-white bg-opacity-75" id="myTab">
+        <li class="nav-item">
+          <a href="#cc_customer" class="nav-link active" data-bs-toggle="tab">For Customers</a>
+        </li>
+        <li class="nav-item">
+          <a href="#cc_partner" class="nav-link" data-bs-toggle="tab">For Partners</a>
+        </li>
+      </ul>
+    </div>
+    <div class="tab-content mx-5 mb-3 bg-white bg-opacity-50" style="backdrop-filter: blur(10px);">
+      <div class="tab-pane fade show active" id="cc_customer">
+        <h3 class="text-center pt-4">We're sorry for inconvenience: profile is under maintenance!</h3>
+        <div class="list-group pb-5 px-5 pt-2">
+          <a class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h4>This webpage is growing, but slow...</h4>
+              <small>Sorry...</small>
+            </div>
+            <p>Our main task is to provide an ultimate marketplace for all energy drink passionates and collectioneers. And the page is doing it well: all good can be bought and delivered at ease.
+            However, we always wanted more (and states that like it's already there). We're sorry for deceptive front page, but it's done when it's done.
+            We're working hard to provide you best and the only energy drink social network ever.</p>
+            <h3>To-do list:</h3>
+            <p>Profile<br>
+            Reviews<br>
+            Shopping Cart<br>
+            Separate drink paging<br>
+            Creating accounts<br></p>
+          </a>
+          <a class="list-group-item list-group-item-action active">
+            <div class="d-flex w-100 justify-content-between">
+              <h4>Contacts</h4>
+              <small>thoubleshooting</small>
+            </div>
+            <p>Phone (US): <i class="fa fa-phone"></i><i class="fa fa-flag-usa"></i> +1 101 99 11 1<br>
+            Phone (WW): <i class="fa fa-phone"></i><i class="fa fa-globe"></i> +0 213 333 33 09<br>
+            Whatsapp: <i class="fa fa-whatsapp"></i> @energetixers<br>
+            Instagram: <i class="fa fa-instagram"></i> @energetix.xitegrene<br>
+            Facebook: <i class="fa fa-facebook"></i> @energetix_with_face<br>
+            Twitter (or X? we'll keep the birdie): <i class="fa fa-twitter"></i> @energetix_energetix<br>
+            Public Mail: <i class="fa fa-envelope"></i> ask@energetix.com</p>
+          </a>
+          <a class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h4>What else to do?</h4>
+              <small>move along</small>
+            </div>
+            <p>Feel free to check our social media. While this page is under construction, we offer most of our content via instagram etc.
+            We offer sales, news and other fun stuff that can fit your personality or a wallet. Good luck!</p>
+          </a>
+        </div>
+      </div>
+        <div class="tab-content mx-5 mb-3 bg-white">
+          <div class="tab-pane fade" id="cc_partner">
+            <h3 class="text-center pt-4">You're an energy drink producer/owner of a shop with corresponding items?</h3>
+            <p class="pb-5 px-5 pt-2">We're happy to work with you. We're constantly seeking for an opportunity to widen up our shelves.
+            If you want to enter a partnership, contact us via our professional mail:<br>
+            offer@energetix.com<br>
+            We will discuss of working details there. Thank you.</p>
+          </div>
+        </div>
+    </div>
 
 
 
