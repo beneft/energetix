@@ -67,6 +67,7 @@ clock={                     //create clock object
                 clearInterval(clock.interval);
                 $('.count').text(0);
                 $('.clock').removeAttr('style');
+                $('#win').removeClass('d-none');
             }
         },1000);
     },
