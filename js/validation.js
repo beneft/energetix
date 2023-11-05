@@ -145,6 +145,10 @@ window.addEventListener("load", function() {
             document.querySelector('#zip').dispatchEvent(reevent1);
         } else {
             let permission = Notification.permission;
+            $('#lorry').animate({opacity:100},200);
+            $('#lorry').animate({height:50,width:50},200,function (){
+                $('#lorry').animate({left:"150%"},5000);
+            })
             if(permission === "granted"){
                 let notification = new Notification("You have successfully purchased!",{
                     tag:"noti",

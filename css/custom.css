@@ -209,9 +209,29 @@ hr:hover{
     bottom:0;
     left:0;
 }
-@media (min-width: 580px){
+@media (min-width: 580px) and (max-width: 1079px){
     .carousel-item .card {
         font-size: 1.75vw;
+        height: 100%;
+        border: none;
+        background: rgba(140, 140, 140, 0.85);
+        color: white;
+        object-fit: contain;
+    }
+}
+@media (min-width: 1080px) and (max-width: 1600px) {
+    .carousel-item .card {
+        font-size: 1.5vw;
+        height: 100%;
+        border: none;
+        background: rgba(140, 140, 140, 0.85);
+        color: white;
+        object-fit: contain;
+    }
+}
+@media (min-width: 1601px) {
+    .carousel-item .card {
+        font-size: 1vw;
         height: 100%;
         border: none;
         background: rgba(140, 140, 140, 0.85);
@@ -346,4 +366,74 @@ form{
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+
+*[data-descr] {
+    text-decoration: underline;
+    color: whitesmoke;
+    cursor: help;
+}
+
+.invisible {
+    display: none;
+}
+
+.tooltip_custom {
+    position: absolute;
+    background-color: whitesmoke;
+    border: 1px gray solid;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.alert{
+    white-space: nowrap;
+}
+
+.color{
+    transition: background-color 0.5s;
+    background-color: #4d5154;
+}
+
+.game-container {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px;
+    position: relative;
+}
+
+.word-tile {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.gamenotify {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    position: relative;
+}
+
+.hidden {
+    display: none;
+}
+
+#gamebtn {
+    margin-top: 20px;
+}
+
+#lorry{
+    height: 1000px;
+    width: 1000px;
+    z-index: 2;
+    position: absolute;
+    top:93%;
+    right:40%;
+    opacity: 0;
+    pointer-events: none;
 }

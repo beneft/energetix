@@ -12,7 +12,7 @@
   <script src="js/validation.js"></script>
 </head>
 <body>
-<main class="mx-lg-4 mx-sm-2 mx-2" id="toppage">
+<main class="mx-lg-4 mx-sm-2 mx-2 position-relative overflow-hidden" id="toppage">
   <nav class="navbar navbar-expand-lg navbar-light bg-light position-sticky sticky-top">
     <div class="container-fluid">
       <a onclick="document.getElementById('toppage').scrollIntoView({behavior:'smooth'});" class="navbar-brand">
@@ -42,10 +42,20 @@
     </div>
   </nav>
 
-  <div class="alert alert-warning mt-2 mx-2 text-center">
+  <div class="alert alert-warning mt-2 mx-auto text-center">
     <i class="fa fa-info-circle"></i><strong> This webpage is under construction!</strong> We are sorry for any caused inconvenience or utterly ugly appearance!
   </div>
-  <form class="mx-md-5 mx-3 mb-5 px-4 text-light border border-warning validation" novalidate onsubmit="validateForm()">
+  <script>
+    $(document).ready(function (){
+      $('.alert').mouseover(function(){
+        $(this).animate({width:0, opacity:0},500,function (){
+          $(this).css("display","none");
+        });
+      })
+    })
+  </script>
+
+  <form class="mx-md-5 mx-3 mb-5 mt-2 px-4 text-light border border-warning validation" novalidate onsubmit="validateForm()">
     <div class="row g-1 mb-2">
       <div class="col-6 px-1">
         <label class="form-label" for="name">Name</label>
@@ -123,7 +133,9 @@
     <textarea class="form-control mx-auto mb-2" rows="2"></textarea>
     <div class="my-4 justify-content-around d-flex">
       <a href="index.html" class="btn btn-secondary rounded-pill">Discard</a>
-      <button type="submit" class="btn btn-primary rounded-pill">Proceed to payment</button>
+      <img src="img/lorry.png" class="d-inline" id="lorry">
+      <button type="submit" class="btn btn-primary rounded-pill" id="btnproceed">Proceed to payment</button>
+    </span>
     </div>
   </form>
 <!--  <script>-->

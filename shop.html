@@ -42,9 +42,18 @@
     </div>
   </nav>
 
-  <div class="alert alert-warning mt-2 mx-2 text-center">
+  <div class="alert alert-warning mt-2 mx-auto text-center">
     <i class="fa fa-info-circle"></i><strong> This webpage is under construction!</strong> We are sorry for any caused inconvenience or utterly ugly appearance!
   </div>
+  <script>
+    $(document).ready(function (){
+      $('.alert').mouseover(function(){
+        $(this).animate({width:0, opacity:0},500,function (){
+          $(this).css("display","none");
+        });
+      })
+    })
+  </script>
 
   <div class="container mb-4">
     <div class="row g-1 mx-auto my-2 justify-content-around">

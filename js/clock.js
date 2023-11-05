@@ -12,6 +12,7 @@ clock={                     //create clock object
     interval:null,
     init:function(){
         $('.input-btn').click(function(){           //set function for a start button
+            $('#win').addClass('d-none');
             switch($(this).data('action')){
                 case'start':
                     clock.stop();
@@ -30,6 +31,8 @@ clock={                     //create clock object
         var sec = min*60;
         var secalert = 5*60;
         var lop = sec;
+        var audio = new Audio("audio/tick_new.mp3");
+        audio.load();
         $('.count').text(min);          //set counter text to our minutes
         if(min>0){                      //decide what is depicted mins or secs
             $('.count').addClass('min')
@@ -38,6 +41,7 @@ clock={                     //create clock object
         }
         clock.interval = setInterval(function(){    //create a function that executes at 1000ms interval
             sec = sec-1;
+            audio.play();
             if (secalert==0) {
                 alert("5 minutes have passed");
                 secalert=5;
