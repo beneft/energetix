@@ -47,12 +47,13 @@
         </div>
     </nav>
 
-    <div class="alert alert-warning mt-2 mx-auto text-center overflow-hidden">
+    <div class="alert alert-warning mt-2 mx-auto text-center">
         <i class="fa fa-info-circle"></i><strong> This webpage is under construction!</strong> We are sorry for any caused inconvenience or utterly ugly appearance!
     </div>
     <script>
         $(document).ready(function (){
             $('.alert').mouseover(function(){
+                $(this).addClass('alert-disappear');
                 $(this).animate({width:0, opacity:0},500,function (){
                     $(this).css("display","none");
                 });

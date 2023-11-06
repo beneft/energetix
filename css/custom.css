@@ -386,8 +386,9 @@ form{
     padding: 3px;
 }
 
-.alert{
+.alert-disappear{
     white-space: nowrap;
+    overflow: hidden;
 }
 
 .color{
