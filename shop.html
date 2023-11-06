@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./css/custom.css">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="./img/favicon.png">
@@ -399,7 +400,67 @@
     </div>
 
   </div>
-  <footer>
+  <canvas id="myChart" style="width:100%;max-width:700px;background-color:whitesmoke;" class="mx-auto"></canvas>
+  <script>
+    const xValues = ["50mg", "30mg", "32mg", "27mg"];
+    const yValues = [1, 6, 4, 1];
+    const barColors = ["yellow", "green","orange","purple"];
+
+    new Chart("myChart", {
+      type: "bar",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        legend: {display: false},
+        title: {
+          display: true,
+          text: "Drinks by Caffeine"
+        },
+        responsive: true,
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                min: 0, // it is for ignoring negative step.
+                beginAtZero: true,
+                stepSize: 1  // if i use this it always set it '1', which look very awkward if it have high value  e.g. '100'.
+              }
+            }
+          ]
+        }
+      }
+    });
+  </script>
+  <canvas id="myChart2" style="width:100%;max-width:700px;background-color:whitesmoke;" class="mx-auto"></canvas>
+  <script>
+    const xValues2 = ["0-99mg", "100-199mg", "200-350mg",">350mg"];
+    const yValues2 = [4, 0, 3, 5];
+    const barColors2 = ["crimson","floralwhite","cyan","palegreen"];
+
+    new Chart("myChart2", {
+      type: "pie",
+      data: {
+        labels: xValues2,
+        datasets: [{
+          backgroundColor: barColors2,
+          data: yValues2
+        }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: "Drinks by Taurine",
+        },
+        responsive: true,
+      }
+    });
+  </script>
+  <footer class="mt-2">
     <hr>
     <p>33 Sunside Drive, Guatemala, 33913. &copy; Stargazers house</p>
   </footer>
